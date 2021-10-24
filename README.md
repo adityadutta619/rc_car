@@ -7,3 +7,8 @@ Following would be the journey:
 3. Do a test with PWM to control the RC
 
 Next phase will involve including a GPS and sensors to the car
+
+## Upload micropython to esp8266
+
+The firmware for micropython is hosted at: https://micropython.org/download/esp8266/
+
