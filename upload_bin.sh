@@ -1,10 +1,15 @@
-download_dir="/home/aditya/Downloads"
+#!/bin/bash
 
-# Download the binary file to Downloads directory
-wget -P $download_dir -O esp_8266.bin https://micropython.org/resources/firmware/esp8266-20210902-v1.17.bin
+# Download the binary file
+
+if [ -f esp_8266.bin  ]
+then
+	echo "File exists not downloading again"
+else
+	wget -O esp_8266.bin https://micropython.org/resources/firmware/esp8266-20210902-v1.17.bin
+fi
 
 # Check if the esp is connected
-#!/bin/bash
 
 cnt=$(lsusb | grep "UART" | wc -l)
 if [ $cnt -gt 0 ]
@@ -24,11 +29,13 @@ then
 		then
 			echo "Detected UART esp"
 			echo $device
-			echo $chk
+			echo $device_port
 		#	usb_path=$("$device" | awk -F' -' '{print $1}')
 
 			# Copy downloaded file to device
 			# Make sure you have esptool installed
+
+			sudo chmod -R 777 $device_port
 
 			echo "Erasing flash on esp"
 			esptool.py --port $device_port erase_flash
@@ -36,7 +43,9 @@ then
 			wait $!
 
 			echo "Uploading new firmware"
-			esptool.py --port $device_port --baud 460800 write_flash --flash_size=detect 0 "$download_dir/esp_8266.bin"
+			esptool.py --port $device_port --baud 115200 write_flash --flash_size=detect 0 esp_8266.bin
+
+			wait $!
 
 		
 
