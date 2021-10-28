@@ -12,8 +12,9 @@ oled_width = 128
 oled_height = 64
 oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
 
-oled.text('Rachana', 0, 0)
-oled.text('Aditya', 0, 10)
-oled.text('THE RC PROJECT!', 0, 20)
+oled.text('LOVE', 0, 0)
+oled.text('LOVE', 0, 20)
+oled.text('LOVE MY SWEETIE', 0, 40)
+oled.text('HOTTIE PIE', 0, 50)
         
 oled.show()
