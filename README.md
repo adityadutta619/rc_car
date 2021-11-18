@@ -6,7 +6,7 @@ Following would be the journey:
 2. Figure out the connections from ESC and servo to esp8266
 3. Do a test with PWM to control the RC
 
-Next phase will involve including a GPS and sensors to the car
+Next phase will involve including a GPS and sensors to the car. Need to check the best accelerometer
 
 ## Upload micropython to esp8266
 
