@@ -13,17 +13,16 @@ try:
 except:
     pass
 
+
 import network
 wlan = network.WLAN(network.STA_IF)
 
-txts = []
-if wlan.active():
-    txts.append('Network connected')
-    ipaddress = wlan.ifconfig()[0]
-    txts.append('webrepl active at: ')
-    txts.append(ipaddress)
-    
-    txts.append('Connect RC CAR')
-    txts.append('By ADRK!!')
+from time import sleep
+sleep(3)
 
-helpers.dev_disp(txts)
+for i in range(10):
+    txts = [i for i in wlan.ifconfig()]
+    txts.append('      ')
+    txts.append('  By ADRK!!')
+    sleep(0.5)
+    helpers.dev_disp(txts)
