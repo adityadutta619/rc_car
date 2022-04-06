@@ -1,3 +1,6 @@
+'''
+Program to get accelerometer readings
+'''
 from machine import I2C, Pin
 import mpu6050
 i2c = I2C(scl=Pin(5), sda=Pin(4))
