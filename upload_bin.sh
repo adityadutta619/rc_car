@@ -6,7 +6,7 @@ if [ -f esp_8266.bin  ]
 then
 	echo "File exists not downloading again"
 else
-	wget -O esp_8266.bin https://micropython.org/resources/firmware/esp8266-20210902-v1.17.bin
+	wget -O esp_8266.bin https://micropython.org/resources/firmware/esp8266-20220117-v1.18.bin
 fi
 
 # Check if the esp is connected
