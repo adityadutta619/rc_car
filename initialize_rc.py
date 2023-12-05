@@ -1,7 +1,7 @@
 # Change pins as needed
 
 import machine
-servo_pin = machine.Pin(14)
+servo_pin = machine.Pin(15)
 servo = machine.PWM(servo_pin, freq=50)
 
 # Goes from 40 to 115
