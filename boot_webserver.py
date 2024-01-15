@@ -21,7 +21,7 @@ accelerometer = mpu6050.accel(i2c)
 station = network.WLAN(network.STA_IF)
 
 station.active(True)
-station.connect('Conv', 'merryweather246')
+station.connect('RedPanda_2.4', 'merryweather246')
 
 while station.isconnected() == False:
   pass
